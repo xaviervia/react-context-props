@@ -1,6 +1,6 @@
 {
   "name": "react-context-props",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Decorate React Components so they can get context props as regular props",
   "main": "dist/index.js",
   "dependencies": {},
@@ -26,5 +26,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "The Unlicense"
+  "license": "The Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xaviervia/react-context-props.git"
+  }
 }

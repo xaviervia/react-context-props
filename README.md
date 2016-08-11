@@ -4,11 +4,6 @@ Decorate React Components so they can get context props as regular props.
 
 ## How
 
-`react-context-props` comprises two functions (both higher order components):
-
-- `getContextualizer`: allows you to generate a component that will receive certain props and put them in the React context. `getContextualizer` is called with a `propTypes` object describing the props that the resulting component will be able to recognize and put in the context.
-- `withPropsFromContext`: decorates an already existing component so that the declared properties are captured from the React context and passed to it as regular props.
-
 ```javascript
 import { getContextualizer, withPropsFromContext } from 'react-context-props'
 import React, { PropTypes } from 'react'
@@ -38,6 +33,11 @@ render(
   document.getElementById('main')
 )
 ```
+
+`react-context-props` comprises two functions (both higher order components):
+
+- `getContextualizer`: allows you to generate a component that will receive certain props and put them in the React context. `getContextualizer` is called with a `propTypes` object describing the props that the resulting component will be able to recognize and put in the context.
+- `withPropsFromContext`: decorates an already existing component so that the declared properties are captured from the React context and passed to it as regular props.
 
 You don't need to use both of these functions: you can just use `getContextualizer` to generate components that can put props in the context and have components that are already aware of the context consuming those; or you can just use `withPropsFromContext` to decorate your components so that they can get certain props the regular way or from the context.
 

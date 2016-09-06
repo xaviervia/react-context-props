@@ -10,7 +10,7 @@
     "sagui": "^6.3.4"
   },
   "peerDependencies": {
-    "react": "~15.0.0"
+    "react": "*"
   },
   "scripts": {
     "test": "npm run test:lint",

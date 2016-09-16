@@ -7,7 +7,7 @@
   "devDependencies": {
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "sagui": "^6.3.4"
+    "sagui": "^6.5.2"
   },
   "peerDependencies": {
     "react": "*"

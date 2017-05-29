@@ -7,22 +7,21 @@
   "devDependencies": {
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "sagui": "^6.5.2"
+    "sagui": "^8.0.7"
   },
   "peerDependencies": {
     "react": "*"
   },
   "scripts": {
-    "test": "npm run test:lint",
     "build": "sagui build",
-    "develop": "sagui develop --port 3000",
-    "dist": "cross-env NODE_ENV=production sagui build --optimize",
-    "start": "npm run develop",
-    "test:coverage": "npm run test:unit -- --coverage",
-    "test:lint": "sagui lint",
-    "test:unit": "cross-env NODE_ENV=test sagui test",
-    "test:unit:watch": "npm run test:unit -- --watch",
-    "prepublish": "npm prune && npm test && npm run build"
+    "dist": "sagui dist",
+    "prepublish": "npm prune && npm test && npm run build",
+    "start": "sagui develop --port 3000",
+    "test": "npm run test:lint",
+    "test:lint": "sagui test:lint",
+    "test:typecheck": "sagui test:typecheck",
+    "test:unit": "sagui test:unit --coverage",
+    "test:unit:watch": "sagui test:unit --watch"
   },
   "keywords": [],
   "author": "",

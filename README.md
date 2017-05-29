@@ -6,7 +6,8 @@ Decorate React Components so they can get context props as regular props.
 
 ```javascript
 import { getContextualizer, withPropsFromContext } from 'react-context-props'
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { render } from 'react-dom'
 
 function Text ({ children, color }) {
@@ -18,7 +19,7 @@ function Text ({ children, color }) {
 }
 
 const ContextProps = getContextualizer({ color: PropTypes.string })
-const TextWithColorFromContext = withPropsFromContext(Text, ['color'])
+const TextWithColorFromContext = withPropsFromContext(['color'])(Text)
 
 render(
   (

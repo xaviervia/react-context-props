@@ -1,11 +1,8 @@
-import React, { PropTypes } from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 export const getContextualizer = propTypes => {
-  return React.createClass({
-    displayName: 'ContextProps',
-
-    childContextTypes: propTypes,
-
+  class ContextProps extends Component {
     getChildContext () {
       const props = Object.keys(this.props)
         .reduce((x, key) => {
@@ -17,26 +14,21 @@ export const getContextualizer = propTypes => {
         }, {})
 
       return props
-    },
+    }
 
     render () {
       return <span>{this.props.children}</span>
     }
-  })
+  }
+
+  ContextProps.displayName = 'ContextProps'
+
+  ContextProps.childContextTypes = propTypes
+  return ContextProps
 }
 
-export const withPropsFromContext = propList => Target =>
-  React.createClass({
-    displayName: Target.displayName || Target.name,
-
-    contextTypes: propList.reduce(
-      (x, prop) => {
-        x[prop] = PropTypes.any
-        return x
-      },
-      {}
-    ),
-
+export const withPropsFromContext = propList => Target => {
+  class WithPropsFromContext extends Component {
     render () {
       const props = {
         ...propList.reduce(
@@ -54,4 +46,17 @@ export const withPropsFromContext = propList => Target =>
         <Target {...props} />
       )
     }
-  })
+  }
+
+  WithPropsFromContext.contextTypes = propList.reduce(
+    (x, prop) => {
+      x[prop] = PropTypes.any
+      return x
+    },
+    {}
+  )
+
+  WithPropsFromContext.displayName = Target.displayName || Target.name
+
+  return WithPropsFromContext
+}

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { render } from 'react-dom'
 import { getContextualizer, withPropsFromContext } from '../'
 
@@ -7,7 +8,7 @@ function Text ({ label, color }) {
 }
 
 const Contextualizer = getContextualizer({ color: PropTypes.string })
-const TextThatGetsColorFromContext = withPropsFromContext(Text, ['color'])
+const TextThatGetsColorFromContext = withPropsFromContext(['color'])(Text)
 
 render(
   <div>

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-export const getContextualizer = (propTypes) => {
+export const getContextualizer = propTypes => {
   return React.createClass({
     displayName: 'ContextProps',
 
@@ -25,9 +25,9 @@ export const getContextualizer = (propTypes) => {
   })
 }
 
-export const withPropsFromContext = (Component, propList) =>
+export const withPropsFromContext = propList => Target =>
   React.createClass({
-    displayName: Component.displayName || Component.name,
+    displayName: Target.displayName || Target.name,
 
     contextTypes: propList.reduce(
       (x, prop) => {
@@ -51,7 +51,7 @@ export const withPropsFromContext = (Component, propList) =>
       }
 
       return (
-        <Component {...props} />
+        <Target {...props} />
       )
     }
   })

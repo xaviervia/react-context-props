@@ -7,7 +7,7 @@ function Text ({ label, color }) {
 }
 
 const Contextualizer = getContextualizer({ color: PropTypes.string })
-const TextThatGetsColorFromContext = withPropsFromContext(Text, ['color'])
+const TextThatGetsColorFromContext = withPropsFromContext(['color'])(Text)
 
 render(
   <div>

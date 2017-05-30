@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`End to End Context Color \`color\` prop in Contextualizer is green 1`] = `"<span><p style=\\"color: green;\\">Lorem ipsum</p><p style=\\"color: green;\\">Dolor sit amet</p></span>"`;
-
-exports[`End to End Context Color \`color\` prop in Contextualizer is red 1`] = `"<span><p style=\\"color: red;\\">Lorem ipsum</p><p style=\\"color: red;\\">Dolor sit amet</p></span>"`;

@@ -1,39 +1,39 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { mount } from 'enzyme'
 
-import { getContextualizer, withPropsFromContext } from '../src/index.js'
+import { getColorContextualizer, getThemeContextualizer, Text, ThemeText } from './e2e-helpers'
 
-const Text = ({ label, color }) => <p style={{ color }}>{label}</p>
-
-const Contextualizer = getContextualizer({ color: PropTypes.string })
-const TextThatGetsColorFromContext = withPropsFromContext(['color'])(Text)
-
-const getColorContextualizer = color => (
-  <Contextualizer color={color}>
-    <TextThatGetsColorFromContext label='Lorem ipsum' />
-    <TextThatGetsColorFromContext label='Dolor sit amet' />
-  </Contextualizer>
-)
-
-describe('End to End Context Color', () => {
-  test('`color` prop in Contextualizer is green', () => {
+describe('Contextualizer without targetProp', () => {
+  test('`color` prop is green', () => {
     const color = 'green'
-    const GreenContext = getColorContextualizer(color)
-
-    const wrapper = mount(GreenContext)
+    const wrapper = mount(getColorContextualizer(color))
 
     expect(wrapper.find(Text).at(0).prop('color')).toBe(color)
     expect(wrapper.find(Text).at(1).prop('color')).toBe(color)
   })
 
-  test('`color` prop in Contextualizer is red', () => {
+  test('`color` prop is red', () => {
     const color = 'red'
-    const RedContext = getColorContextualizer(color)
-
-    const wrapper = mount(RedContext)
+    const wrapper = mount(getColorContextualizer(color))
 
     expect(wrapper.find(Text).at(0).prop('color')).toBe(color)
     expect(wrapper.find(Text).at(1).prop('color')).toBe(color)
+  })
+})
+
+describe('Contextualizer with targetProp', () => {
+  test('`mainColor` prop in `theme` matches `blue`', () => {
+    const mainColor = 'blue'
+    const wrapper = mount(getThemeContextualizer(mainColor))
+
+    expect(wrapper.find(ThemeText).at(0).prop('theme')).toMatchObject({ mainColor })
+    expect(wrapper.find(ThemeText).at(0).prop('theme')).toMatchObject({ mainColor })
+  })
+
+  test('mainColor prop in theme matches `yellow`', () => {
+    const mainColor = 'yellow'
+    const wrapper = mount(getThemeContextualizer(mainColor))
+
+    expect(wrapper.find(ThemeText).at(0).prop('theme')).toMatchObject({ mainColor })
+    expect(wrapper.find(ThemeText).at(1).prop('theme')).toMatchObject({ mainColor })
   })
 })

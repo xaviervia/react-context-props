@@ -23,7 +23,6 @@ describe('End to End Context Color', () => {
 
     const wrapper = mount(GreenContext)
 
-    expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.find(Text).at(0).prop('color')).toBe(color)
     expect(wrapper.find(Text).at(1).prop('color')).toBe(color)
   })
@@ -34,7 +33,6 @@ describe('End to End Context Color', () => {
 
     const wrapper = mount(RedContext)
 
-    expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.find(Text).at(0).prop('color')).toBe(color)
     expect(wrapper.find(Text).at(1).prop('color')).toBe(color)
   })

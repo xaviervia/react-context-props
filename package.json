@@ -5,9 +5,12 @@
   "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
+    "enzyme": "^2.8.2",
+    "jest": "^20.0.4",
     "prop-types": "^15.5.0",
     "react": "^15.5.0",
     "react-dom": "^15.5.0",
+    "react-test-renderer": "^15.5.4",
     "sagui": "^9.0.0-rc.16"
   },
   "peerDependencies": {
@@ -28,7 +31,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "The Unlicense",
+  "license": "Unlicense",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xaviervia/react-context-props.git"

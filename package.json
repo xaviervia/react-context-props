@@ -1,6 +1,6 @@
 {
   "name": "react-context-props",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Decorate React Components so they can get context props as regular props",
   "main": "dist/index.js",
   "dependencies": {},
@@ -11,7 +11,7 @@
     "react": "^15.5.0",
     "react-dom": "^15.5.0",
     "react-test-renderer": "^15.5.4",
-    "sagui": "^8.0.7"
+    "sagui": "^9.0.0-rc.16"
   },
   "peerDependencies": {
     "prop-types": "^15.5.0",
@@ -20,6 +20,7 @@
   "scripts": {
     "build": "sagui build",
     "dist": "sagui dist",
+    "format": "sagui format",
     "prepublish": "npm prune && npm test && npm run build",
     "start": "sagui develop --port 3000",
     "test": "npm run test:lint",

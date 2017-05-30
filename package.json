@@ -30,7 +30,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "The Unlicense",
+  "license": "Unlicense",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xaviervia/react-context-props.git"

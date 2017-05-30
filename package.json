@@ -8,7 +8,7 @@
     "prop-types": "^15.5.0",
     "react": "^15.5.0",
     "react-dom": "^15.5.0",
-    "sagui": "^8.0.7"
+    "sagui": "^9.0.0-rc.16"
   },
   "peerDependencies": {
     "prop-types": "^15.5.0",
@@ -17,6 +17,7 @@
   "scripts": {
     "build": "sagui build",
     "dist": "sagui dist",
+    "format": "sagui format",
     "prepublish": "npm prune && npm test && npm run build",
     "start": "sagui develop --port 3000",
     "test": "npm run test:lint",

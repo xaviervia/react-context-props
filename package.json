@@ -23,7 +23,7 @@
     "format": "sagui format",
     "prepublish": "npm prune && npm test && npm run build",
     "start": "sagui develop --port 3000",
-    "test": "npm run test:lint",
+    "test": "npm run test:lint && jest",
     "test:lint": "sagui test:lint",
     "test:typecheck": "sagui test:typecheck",
     "test:unit": "sagui test:unit --coverage",

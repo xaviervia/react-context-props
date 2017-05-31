@@ -42,6 +42,30 @@ render(
 
 You don't need to use both of these functions: you can just use `getContextualizer` to generate components that can put props in the context and have components that are already aware of the context consuming those; or you can just use `withPropsFromContext` to decorate your components so that they can get certain props the regular way or from the context.
 
+### Putting everything from the Contextualizer into a single prop
+
+`getContextualizer` can also be called like:
+
+```javascript
+const ContextProps = getContextualizer(
+  {
+    background: PropTypes.string,
+    color: PropTypes.string
+  },
+  'theme'
+)
+```
+
+In this way, the prop in the React.context will be `theme` and it will contain an object with all the props passed to it. For example:
+
+```javascript
+<ContextProps color='red' background='green'>
+  …
+</ContextProps>
+```
+
+…will set a `theme` prop in the React.context containing `{color: 'red', background: 'green'}`.
+
 ## Install
 
 ```

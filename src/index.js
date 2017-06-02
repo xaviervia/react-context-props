@@ -49,7 +49,7 @@ export const withPropsFromContext = propList => Target => {
     return x
   }, {})
 
-  WithPropsFromContext.displayName = Target.displayName || Target.name
+  WithPropsFromContext.displayName = `withPropsFromContext(${Target.displayName || Target.name})`
 
   return WithPropsFromContext
 }

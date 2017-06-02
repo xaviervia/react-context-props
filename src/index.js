@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export const getContextualizer = (propTypes, targetProp) => {
   class ContextProps extends Component {
-    getChildContext() {
+    getChildContext () {
       const props = Object.keys(this.props).reduce((x, key) => {
         if (key !== 'children') {
           x[key] = this.props[key]
@@ -15,7 +15,7 @@ export const getContextualizer = (propTypes, targetProp) => {
       return targetProp ? { [targetProp]: props } : props
     }
 
-    render() {
+    render () {
       return <span>{this.props.children}</span>
     }
   }
@@ -30,14 +30,14 @@ export const getContextualizer = (propTypes, targetProp) => {
 
 export const withPropsFromContext = propList => Target => {
   class WithPropsFromContext extends Component {
-    render() {
+    render () {
       const props = {
         ...propList.reduce((x, prop) => {
           x[prop] = this.context[prop]
 
           return x
         }, {}),
-        ...this.props,
+        ...this.props
       }
 
       return <Target {...props} />

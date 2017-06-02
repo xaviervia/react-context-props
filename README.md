@@ -1,5 +1,8 @@
 # react-context-props
 
+[![Build Status](https://travis-ci.org/xaviervia/react-context-props.svg?branch=master)](https://travis-ci.org/xaviervia/react-context-props)
+[![npm version](https://img.shields.io/npm/v/react-context-props.svg?maxAge=10000)](https://www.npmjs.com/package/react-context-props)
+
 Decorate React Components so they can get context props as regular props.
 
 ## How
@@ -81,9 +84,11 @@ npm install react-context-props
 
 - Making themeable components (main valid use case for `React.context`)
 
-## Why don't you have unit tests for it?
+## Testing
 
-The project is too simple to need them (and React higher order components too weird to unit test). Just fire up the example: if it works, it works.
+1. Clone this repo.
+2. `npm install`
+3. `npm test`
 
 ## License
 

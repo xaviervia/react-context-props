@@ -1,5 +1,7 @@
 # react-context-props
 
+> Deprecation notice: This package is aimed at the old, pre React 16 Context API. If you are using React 16, I suggest not using this, and using the new API with the `useContext` hook instead.
+
 [![Build Status](https://travis-ci.org/xaviervia/react-context-props.svg?branch=master)](https://travis-ci.org/xaviervia/react-context-props)
 [![npm version](https://img.shields.io/npm/v/react-context-props.svg?maxAge=10000)](https://www.npmjs.com/package/react-context-props)
 
